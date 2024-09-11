@@ -3,6 +3,20 @@ K26C SOM
 
 Approach:
 Need to Convert some or all of this code to baremetal PS code
+Want to first enable a few very specific settings first, then we will work on making this library a bit general
+
+## Milestone 1
+
+### Only Enable Encode Block
+
+#### Requirements
+- **Send Task List to MCU**
+  - h.265
+  - 15 Mbps
+  - Other settings will be taken care of later
+- **Service Interrupts on APU**
+      
+
 
 
 
