@@ -19,59 +19,60 @@ Want to first enable a few very specific settings first, then we will work on ma
 
 
 
+# VCU Control Software Source Code
 
-============================
-VCU Control Software Source Code
-============================
+## Overview
 
-Overview
-========
+The VCU control software can be used in two ways:
+- As a standalone command-line executable (details provided below).
+- As a library, with entry points available in `lib_encode` and `lib_decode`.
 
-The control-software can be used as:
-- a standalone command-line executable (see below).
-- a library, whose entry point can be found in lib_encode and lib_decode
+## Libraries
 
-How to build the encoder and the decoder
-=====================================
+### `customers`
+This library allows for modification of build options, such as enabling traces, via the `config.h` file.
 
-GCC:
-----
+### `lib_app`
+Miscellaneous C++ utilities.
 
-You need a working gcc/g++ toolchain installed.
-Just run:
+### `lib_cfg`
+C++ utilities for configuration file parsing.
 
-$ make
+### `lib_conv_yuv`
+C++ utilities for YUV conversion helpers for the encoder (makes use of `lib_app`).
 
-The resulting binaries will be available in the bin/ directory
+### `lib_preprocess`
+Handles QP table management.
 
-You can test it on a very simple configuration with the following command:
-$ ./bin/ctrlsw_encoder -cfg test/config/encode.simple.cfg
+### `lib_rtos`
+Wrapper around OS synchronization primitives.
 
-Libraries
-=========
+### `lib_common`
+Miscellaneous C utilities.
 
-customers       Allows to change build options like traces enabling (config.h)
+### `lib_common_*`
+Contains structures used for communication with the firmware.
 
-lib_app         misc C++ utilities.
-lib_cfg         C++ configuration file parsing.
-lib_conv_yuv    C++ yuvs conversion helpers for the encoder (use lib_app)
-lib_preprocess  QP table management
+### `lib_bitstream`
+High-level syntax bitstream generation, such as headers.
 
-lib_rtos        wrapper around OS synchronization primitives.
-lib_common      misc C utilities.
-lib_common_*    structures used to communicate with the firmware
-lib_bitstream   high-level syntax bitstream generation (e.g headers).
+### `lib_encode`
+Entry point for the encoding library.
 
-lib_encode      encode library entry point.
-lib_decode      decode library entry point
+### `lib_decode`
+Entry point for the decoding library.
 
-lib_parsing     codec specifications specifics for the decoder (HLS, DPB, etc.)
+### `lib_parsing`
+Contains codec specifications relevant to the decoder (HLS, DPB, etc.).
 
-lib_fpga        communication with the hardware (read/write register, irq).
-lib_ip_ctrl     interface to the codec.
+### `lib_fpga`
+Handles communication with the hardware, including reading/writing registers and handling IRQs.
 
-User Manual
-===========
+### `lib_ip_ctrl`
+Interface for controlling the codec.
 
-Refer to Xilinx product guide document: PG252 H.264/H.265 Video Codec Unit Product Guide
+## User Manual
+
+For more detailed information, refer to the Xilinx product guide document: **PG252 H.264/H.265 Video Codec Unit Product Guide**.
+
 
