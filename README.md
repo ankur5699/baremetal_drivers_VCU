@@ -1,9 +1,12 @@
-Device Details:
+# BAREMETAL DRIVERS FOR VCU
+
+
+## Device Details:
 K26C SOM
 
-Approach:
-Need to Convert some or all of this code to baremetal PS code
-Want to first enable a few very specific settings first, then we will work on making this library a bit general
+## Approach:
+- Need to Convert some or all of this code to baremetal PS code
+- Want to first enable a few very specific settings first, then we will work on making this library a bit general
 
 ## Milestone 1
 
