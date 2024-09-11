@@ -8,6 +8,15 @@ K26C SOM
 - Need to Convert some or all of this code to baremetal PS code
 - Want to first enable a few very specific settings first, then we will work on making this library a bit general
 
+## Implementation
+- I'd like that anyone could just import contents of **src** and **include** into their respective vitis project
+  # Libraries That might be needed
+    - xil_io.h
+    - xil_fpga.h
+    - xil_libmetal.h
+    
+
+
 ## Milestone 1
 
 ### Only Enable Encode Block
